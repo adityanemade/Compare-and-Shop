@@ -1,1 +1,1 @@
-### Software Project
+### Frontend in React/Redux
