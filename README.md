@@ -1,3 +1,12 @@
 ### Frontend in React/Redux
 
-npm install && npm run dev
+Run `npm install` in the root folder:
+
+```
+npm install
+```
+Run `npm run dev` the development server:
+
+```
+npm run dev
+```
