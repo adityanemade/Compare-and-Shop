@@ -7,6 +7,9 @@ import {
   setError,
   resetFactory
 } from './factory';
+import {
+  setEmail
+} from './login';
 
 export const allActions = {
   COMMON: {
@@ -17,5 +20,8 @@ export const allActions = {
   FACTORY: {
     setError,
     resetFactory
+  },
+  LOGIN: {
+    setEmail
   }
 };

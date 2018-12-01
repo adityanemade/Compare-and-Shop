@@ -22,6 +22,7 @@ class ComingSoon extends Component {
       <div className="main-coming-soon">
         <h1 className="text-coming-soon">{constants[this.props.languageReducer.appLanguage].MESSAGE}</h1>
       </div>
+
     );
   }
 }

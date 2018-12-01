@@ -7,6 +7,7 @@ export default {
   HISTORY: history,
   ACTIONS: {
     COMMON: allActions.COMMON,
-    FACTORY: allActions.FACTORY
+    FACTORY: allActions.FACTORY,
+    LOGIN: allActions.LOGIN
   }
 };

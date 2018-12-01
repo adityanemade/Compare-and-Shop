@@ -8,6 +8,8 @@ import storeHouse from '../storehouse';
 
 import utilities from '../utilities';
 import {errorCodeMessages} from '../utilities/config';
+import Header from './Header';
+import Footer from './Footer';
 
 class Layout extends Component {
   constructor(props) {
@@ -18,9 +20,11 @@ class Layout extends Component {
 
   render() {
     return (
+
       <div>
+        <Header />
         {this.props.children}
-        <Loading />
+        <Footer />
       </div>
     );
   }
@@ -34,4 +38,3 @@ const mapDispatchToProps = dispatch =>
   );
 
 export default connect(state => state, mapDispatchToProps)(Layout);
-
