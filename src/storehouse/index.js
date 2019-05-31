@@ -8,6 +8,6 @@ export default {
   ACTIONS: {
     COMMON: allActions.COMMON,
     FACTORY: allActions.FACTORY,
-    LOGIN: allActions.LOGIN
+    HOME: allActions.HOME
   }
 };

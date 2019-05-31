@@ -1,87 +1,69 @@
-// built-in modules
+/** ***************************************************
+ *  src/components/Header/index.js
+ *
+ *  Header Component
+ ** ***************************************************/
+
 import React, {Component} from 'react';
 import connect from 'react-redux/es/connect/connect';
-import {
-  BrowserRouter as Router,
-  Link,
-  Route,
-  Switch,
-} from 'react-router-dom';
-import{
-  Navbar,
-  Nav,
-  NavItem,
-  NavDropdown,
-  MenuItem,
-  FormGroup,
-  FormControl,
-  Button,
-  PageHeader,
-  Glyphicon,
-  Clearfix,
-} from 'react-bootstrap';
+import {bindActionCreators} from 'redux';
+import {push} from 'connected-react-router';
+import {Link} from 'react-router-dom';
 
-// custom modules
-import Login from '../Login';
-import Home from '../Home';
-import SignUp from '../SignUp';
-
+// Custom Modules
+// import './comingsoon.css';
+// import constants from './constants';
 
 class Header extends Component {
   constructor(props) {
     super(props);
   }
 
- onSelectAlert(eventKey) {
-    alert(`Alert from menu item.\neventKey: ${eventKey}`);
-  }
-
   render() {
     return (
-      <div className="header">
-        <Navbar>
-          <Navbar.Header>
-            <Navbar.Brand>
-            <a href="/">Maa ki chu</a>
-            </Navbar.Brand>
-          </Navbar.Header>
-          <Nav>
-            <NavItem eventKey={1} href="/">
-            Home
-            </NavItem>
-            <NavItem eventKey={2} href="/login">
-            Login
-            </NavItem>
-            <NavItem eventKey={2} href="/signUp">
-            Sign Up
-            </NavItem>
-            <NavItem eventKey={3} href="#">
-            AboutUs
-            </NavItem>
-            <Navbar.Form pullLeft>
-              <FormGroup>
-                <FormControl type="text" placeholder="Search" />
-              </FormGroup>{' '}
-              <Button type="submit">Search</Button>
-            </Navbar.Form>
-            <Button bsSize="large">
-              <Glyphicon glyph="shopping-cart" />Cart
-            </Button>
-            <Button bsSize="large">
-              <Glyphicon glyph="menu-hamburger" />
-            </Button>
-            <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
-              <MenuItem eventKey={3.1}>Action</MenuItem>
-              <MenuItem eventKey={3.2}>Another action</MenuItem>
-              <MenuItem eventKey={3.3}>Something else here</MenuItem>
-              <MenuItem divider />
-              <MenuItem eventKey={3.4}>Separated link</MenuItem>
-            </NavDropdown>
-          </Nav>
-        </Navbar>
-      </div>
+      <nav className="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
+        <div className="container">
+
+          <Link to="/" className="navbar-brand waves-effect" href="javascript:void(0)">
+            <strong className="blue-text">Compare-N-Shop</strong>
+          </Link>
+
+          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
+          </button>
+
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <ul className="navbar-nav mr-auto">
+            </ul>
+
+            <ul className="navbar-nav nav-flex-icons">
+              <li className="nav-item" onClick={() => {
+                this.props.goToCheckout();
+              }}>
+                <a className="nav-link waves-effect">
+                  <span className="badge red z-depth-1 mr-1"> {this.props.homeReducer.cart.length} </span>
+                  <i className="fa fa-shopping-cart"></i>
+                  <span className="clearfix d-none d-sm-inline-block"> Cart </span>
+                </a>
+              </li>
+            </ul>
+
+          </div>
+
+        </div>
+      </nav>
     );
   }
 }
 
-export default connect(state => state)(Header);
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      goToCheckout: () => push('/checkout')
+    },
+    dispatch
+  );
+
+export default connect(state => state, mapDispatchToProps)(Header);

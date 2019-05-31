@@ -8,8 +8,12 @@ import {
   resetFactory
 } from './factory';
 import {
-  setEmail
-} from './login';
+  setSelectedCategory,
+  setSelectedProduct,
+  addToCart,
+  buildSearchKeywords,
+  buildVisibleData
+} from './home';
 
 export const allActions = {
   COMMON: {
@@ -21,7 +25,11 @@ export const allActions = {
     setError,
     resetFactory
   },
-  LOGIN: {
-    setEmail
+  HOME: {
+    setSelectedCategory,
+    setSelectedProduct,
+    addToCart,
+    buildSearchKeywords,
+    buildVisibleData
   }
 };

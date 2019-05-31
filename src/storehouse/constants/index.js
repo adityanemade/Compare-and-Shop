@@ -1,6 +1,6 @@
 import {loadingSpinner, language} from './common';
 import {factory} from './factory';
-import {login} from './login';
+import {home} from './home';
 
 export const constants = {
   COMMON: {
@@ -8,5 +8,5 @@ export const constants = {
     LANGUAGE: language
   },
   FACTORY: factory,
-  LOGIN: login,
+  HOME: home
 };

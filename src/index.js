@@ -1,4 +1,13 @@
 // Built-in Modules
+import './assets/css/font-awesome.min.css';
+import './assets/css/bootstrap.min.css';
+import './assets/css/mdb.min.css';
+import './assets/css/style.min.css';
+import './assets/css/main.css';
+
+import './assets/js/jquery-3.3.1.min.js';
+import './assets/js/bootstrap.min.js';
+
 import {AppContainer} from 'react-hot-loader';
 import React from 'react';
 import ReactDOM from 'react-dom';

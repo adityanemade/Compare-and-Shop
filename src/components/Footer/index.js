@@ -1,29 +1,12 @@
-// built-in modules
+/** ***************************************************
+ *  src/components/Footer/index.js
+ *
+ *  Footer Component
+ ** ***************************************************/
+
 import React, {Component} from 'react';
 import connect from 'react-redux/es/connect/connect';
-import {
-  BrowserRouter as Router,
-  Link,
-  Route,
-  Switch,
-} from 'react-router-dom';
-import{
-  Navbar,
-  Nav,
-  NavItem,
-  NavDropdown,
-  MenuItem,
-  FormGroup,
-  FormControl,
-  Button,
-  PageHeader,
-} from 'react-bootstrap';
-
-// custom modules
-import Login from '../Login';
-import Home from '../Home';
-import SignUp from '../SignUp';
-
+import {bindActionCreators} from 'redux';
 
 class Footer extends Component {
   constructor(props) {
@@ -32,31 +15,23 @@ class Footer extends Component {
 
   render() {
     return (
-      <div className="header">
-        <Navbar fixedBottom>
-          <Navbar.Header>
-            <Navbar.Brand>
-            <a href="/">Maa ki chu</a>
-            </Navbar.Brand>
-          </Navbar.Header>
-          <Nav>
-            <NavItem eventKey={1} href="/">
-            Home
-            </NavItem>
-            <NavItem eventKey={2} href="/login">
-            Login
-            </NavItem>
-            <NavItem eventKey={2} href="/signUp">
-            Sign Up
-            </NavItem>
-            <NavItem eventKey={3} href="#">
-            AboutUs
-            </NavItem>
-          </Nav>
-        </Navbar>
-      </div>
+      <footer className="page-footer text-center font-small mt-4 wow fadeIn">
+
+        <div className="footer-copyright py-3">
+          © 2018 Copyright:
+          <a href="javascript:void(0)"> CompareNShop, Inc. All Rights Reserved. </a>
+        </div>
+
+      </footer>
     );
   }
 }
 
-export default connect(state => state)(Footer);
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+    },
+    dispatch
+  );
+
+export default connect(state => state, mapDispatchToProps)(Footer);
