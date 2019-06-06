@@ -10,7 +10,7 @@
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.production.js",
-    "dev": "webpack-dev-server --config webpack.config.development.js",
+    "start": "webpack-dev-server --config webpack.config.development.js",
     "heroku-postbuild": "npm install && npm run build"
   },
   "keywords": [
@@ -18,7 +18,7 @@
     "react-redux",
     "webpack"
   ],
-  "author": "anadisharmaa@gmail.com",
+  "author": "adityanemade@gmail.com",
   "license": "ISC",
   "dependencies": {
     "autoprefixer": "^9.1.5",

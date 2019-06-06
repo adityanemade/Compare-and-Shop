@@ -10,7 +10,7 @@ You need have Nodejs 8+ and npm installed in your system. If not then here is th
 Clone the repository. Open up command prompt in the project folder.
 At first you need to install dependencies using following command:
 
-    npm run install
+    npm install
 And after installing dependencies, run the project using the following command:
 
     npm run dev
